@@ -1,0 +1,27 @@
+#include<SoftwareSerial.h>
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(13,OUTPUT);
+
+}
+
+void loop() {
+  char c;
+  char t;
+  if(Serial.available()){
+    
+    c=Serial.read();
+   t=Serial.read();
+
+    Serial.print(c);
+    Serial.print(t);
+    Serial.println(' ');
+    if(c=='1')
+    digitalWrite(13,HIGH);
+    else
+    digitalWrite(13,LOW);
+    }
+   int d=(t-48)*1000;
+    delay(d);
+    }
